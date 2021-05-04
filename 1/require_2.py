@@ -3,7 +3,6 @@ import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-words = ""
 documents = []
 output_file = open("./text/output_2.txt","w")
 
@@ -12,6 +11,7 @@ for i in range(1, 11):
     tagger = MeCab.Tagger()
     for file in wikifile:
         node = tagger.parseToNode(file)
+        words = ""
         while node:
             node_features=node.feature.split(",")
             if node_features[0]=="名詞" and (node_features[1]=="一般" or node_features[1]=="固有名詞"):
