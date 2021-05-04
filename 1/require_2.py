@@ -24,17 +24,17 @@ vectorizer = TfidfVectorizer(norm=None, smooth_idf=False)
 vecs = vectorizer.fit_transform(npdocs)
 
 terms = vectorizer.get_feature_names()
-print("単語文書行列（TF-IDF)=",file=output_file)
-print("単語\t",end='',file=output_file)
-for term in terms:
-    print("%6s" % term, end='',file=output_file)
-print("\n",file=output_file)
 
 tfidfs = vecs.toarray()
-for n, tfidf in enumerate(tfidfs):
-    print("文書", n+1, "\t", end='',file=output_file)
-    for t in tfidf:
-        print("%8.4f" % t, end='',file=output_file)
-    print("\n",file=output_file) 
+
+print("文書番号\t",end='',file=output_file)
+for n in range(1,11):
+    print("文書", n, "\t", end='',file=output_file)
+print("\n",file=output_file)
 
 similarity = cosine_similarity(tfidfs)
+for n, simi in enumerate(similarity):
+    print("文書", n+1, "\t", end='',file=output_file)
+    for t in simi:
+        print("%8.4f" % t, end='',file=output_file)
+    print("\n",file=output_file) 
