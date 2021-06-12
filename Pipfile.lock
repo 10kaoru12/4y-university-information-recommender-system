@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "64852e2ebc805b58634c683bdfad077e0ebace57a2f18860bdb4070e465e966e"
+            "sha256": "726ff84bfafa204254544695c72d6b653437d3c54b0f5dfa7ae65d9dff1cb530"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -22,6 +22,22 @@
                 "sha256:cd7b2d1018258d7247a71425e9f26463dfb444d411c39569972f4ce586b0c9d8"
             ],
             "version": "==0.10.0"
+        },
+        "gensim": {
+            "hashes": [
+                "sha256:17375b33685d0b36646ff6cec5c9e54c7384d3a7c583cbb4480a8ceb9d811221",
+                "sha256:3691ddda33113a713453a9601ae2b21d297a5c197073eef641ae15d6968a92c1",
+                "sha256:4cb1761a76338abd6c9345cfacdb75173961e238e01258e0c0e599341d397016",
+                "sha256:5c0cb64d8c6df7e61497cc9d23fdbf552eb18d6d39341271b647d2e84d970e00",
+                "sha256:a78e9f51ec87930a7a621c6536c20aac41d35aea52f6b0eae165254dc908ff1b",
+                "sha256:ac146eadb15c197eed99280d91ddaed44f3bac099cb32f790476922b203deefd",
+                "sha256:b4d0b9562796968684028e06635e0f7aff39ffb33719057fd1667754ea09a6e4",
+                "sha256:c748b77082125ada8ccbf7b1de9e60b7c726b5371a17f207234fee66fb32da05",
+                "sha256:f1200f3cc6449fc4d90c052911cee8876178adc4afbf756a77207b8ee5fb3967",
+                "sha256:fd23b1e19bf0cfaf37ce635b5a91d8ae4e3be7886e04bfb57e61d044995c6ed8"
+            ],
+            "index": "pypi",
+            "version": "==4.0.1"
         },
         "joblib": {
             "hashes": [
@@ -316,6 +332,14 @@
             ],
             "index": "pypi",
             "version": "==0.0"
+        },
+        "smart-open": {
+            "hashes": [
+                "sha256:2059b07f530c8c9e2158e4e1575309aacb74bd813da2325c1f348015d04f3bd6",
+                "sha256:e4dc1350b240ef0759e343e4e2f361bfd4e5477bb2619866e97f80240652e92e"
+            ],
+            "markers": "python_version >= '3.6'",
+            "version": "==5.1.0"
         },
         "threadpoolctl": {
             "hashes": [

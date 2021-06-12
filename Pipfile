@@ -11,6 +11,7 @@ sklearn = "*"
 pandas = "*"
 mecab-python3 = "*"
 scikit-surprise = "*"
+gensim = "*"
 
 [dev-packages]
 
