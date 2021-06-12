@@ -11,7 +11,8 @@ sklearn = "*"
 pandas = "*"
 mecab-python3 = "*"
 scikit-surprise = "*"
-gensim = "*"
+python-levenshtein = "*"
+gensim = "==3.8.1"
 
 [dev-packages]
 
