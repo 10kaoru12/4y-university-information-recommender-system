@@ -1,0 +1,10 @@
+beautifulsoup4
+lxml
+mecab-python3
+tqdm
+jupyter
+numpy
+scikit-learn
+scipy
+matplotlib
+

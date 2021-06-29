@@ -21,4 +21,4 @@ RUN pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requ
 
 # [Optional] Uncomment this section to install additional OS packages.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends mecab libmecab-dev mecab-utils mecab-ipadic python3-mecab
+    && apt-get -y install --no-install-recommends mecab libmecab-dev mecab-utils mecab-ipadic python3-mecab jq
