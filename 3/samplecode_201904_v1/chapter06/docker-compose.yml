@@ -1,0 +1,43 @@
+version: '3'
+
+services:    
+ web:
+  build: webapp/
+  command: |
+    run
+    --host 0.0.0.0
+    --port 80
+  volumes:
+    - ./webapp:/app
+    - data:/app/data
+  ports:    
+    - "80:80"
+  environment:
+    FLASK_ENV: development
+        
+ api:
+   build: webapi/
+   volumes:
+    - ./webapi:/app
+   ports:    
+    - 8000
+   tty: true
+    
+ ngrok:
+  image: wernight/ngrok
+  ports:
+    - 4040
+  environment: 
+    - NGROK_PORT=--region ap web:80        
+
+ mongo:
+  image: mongo
+  ports:
+    - "27017"
+  volumes:
+    - mongodb:/data
+  restart: always
+        
+volumes:
+  data:
+  mongodb:

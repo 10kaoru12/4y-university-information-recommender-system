@@ -1,0 +1,11 @@
+beautifulsoup4==4.4.0
+lxml==3.8.0
+mecab-python3==0.7
+tqdm>=4
+html5lib==0.9999999
+jupyter==1.0.0
+numpy==1.16.1
+scikit-learn==0.20.2
+scipy==1.2.0
+tqdm>=4
+matplotlib==2.0.2

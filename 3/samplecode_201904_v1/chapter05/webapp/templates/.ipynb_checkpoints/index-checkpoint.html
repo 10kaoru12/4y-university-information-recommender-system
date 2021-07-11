@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <p>Webアプリケーション</p>
+    <script>
+      document.addEventListener("DOMContentLoaded", function(event) {
+        console.log("DOM fully loaded and parsed");
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", '/log', true);
+
+        //リクエストに従って正しいヘッダー情報を送信してください
+        xhr.setRequestHeader("Content-Type", "application/json");
+        const payload = {
+           "event": "pageview",
+           "timestamp": (new Date().getTime()),
+           "referrer": document.referrer,
+        }
+        console.log(JSON.stringify(payload));
+        // xhr.send(new Int8Array()); 
+        // xhr.send(document);
+      });
+    </script>
+  </body>
+</html>

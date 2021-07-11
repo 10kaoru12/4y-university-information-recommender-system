@@ -17,7 +17,7 @@ def main():
 
 
 def load_html(path_to_html):
-    with open(path_to_html, "rb") as html:
+    with open(path_to_html, "rt") as html:
         soup = BeautifulSoup(html, "lxml")
         return soup
 

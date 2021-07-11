@@ -1,0 +1,41 @@
+
+<!doctype html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <p>Webアプリケーション</p>
+    <img
+       id="sample_image"
+       data-context-id="id=top_iamge"
+       src="https://2.bp.blogspot.com/-YhQr7-LFA80/XDXcZpU4yfI/AAAAAAABRJo/iA_xa3nHPZgWCFSQDlfMBzsTdbDa4vLhgCLcBGAs/s800/kouji_ashiba.png" 
+    />
+    <button id="sample_button">サンプルボタン</button>
+    <script>
+      const logSendHandler = function(event) {
+        const elm = event.target;
+        const payload = {
+           "event": event.type,            
+           "timestamp": (new Date().getTime()),
+           "referrer": document.referrer,
+           // 何を対象としたイベントかを区別する情報を埋め込む
+           "target": elm.nodeName,
+        }  
+        data = JSON.stringify(payload);
+          
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", '/log', true);
+        xhr.setRequestHeader("Content-Type", "application/json");        
+        xhr.send(data); 
+      };
+
+      document.addEventListener("DOMContentLoaded", logSendHandler);        
+      document.addEventListener("click", logSendHandler);        
+    
+      // イベントハンドラを仕込むためは画像ファイルのDOMオブジェクトを取得する       
+      const elm = document.querySelector("#sample_image");
+      elm.addEventListener("load", logSendHandler);
+   </script>
+  </body>
+</html>

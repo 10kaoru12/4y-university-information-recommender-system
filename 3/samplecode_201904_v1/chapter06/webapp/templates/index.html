@@ -1,0 +1,67 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>{{ title}} </title>
+
+    <style>
+    /* Move down content because we have a fixed navbar that is 50px tall */
+    body {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    .col-md-4 > img {
+      width: 120px;
+    }
+    </style>
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <script type="text/javascript" src="{{ url_for('static', filename='logging.js') }}"></script>
+　</head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">{{ title }}</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>レコメンドのデモ</h1>
+        <p>リコメンドを行うためのWebサイトのプロジェクトして,本の紹介を行うWebページを試しに作ってみたいと思います。</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        {% for book in books %}
+        <div class="col-md-4 book-item" data-context="{{ book.get('context',{}) }}">    
+          <h2>{{ book.title }}</h2>          
+          <img src="{{ book.image }}"> </img>
+          <p>{{ book.category }}</p>
+          <p>{{ book.description }} </p>
+          <p><a class="btn btn-default" href="{{ book.link }} " role="button">👍</a></p>
+        </div>
+        {% endfor %}    
+      </div>
+    </div> <!-- /container -->    
+  </body>
+</html>
